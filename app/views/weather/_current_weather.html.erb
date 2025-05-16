@@ -1,0 +1,19 @@
+<% if @temp_f %>
+  <div class="current-weather">
+    <h3>
+      Current Weather for <%= @location %>
+      <% if @cached %>
+        <i class="fas fa-database" title="Data retrieved from Redis Cache"></i>
+      <% end %>
+    </h3>
+
+    <p><strong>Temperature:</strong> <%= @temp_f %>°F (<%= @temp_c %>°C)</p>
+    <div class="condition-display">
+      <p class="condition-text"><strong>Condition:</strong></p>
+      <%= image_tag "https:#{@condition_icon}", class: "condition-icon" %>
+      <p class="condition-text"><%= @condition_text %></p>
+    </div>
+    <p><strong>Humidity:</strong> <%= @humidity %>%</p>
+    <p><strong>Wind Speed:</strong> <%= @wind_mph %> mph</p>
+  </div>
+<% end %>

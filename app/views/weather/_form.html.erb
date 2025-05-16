@@ -1,0 +1,7 @@
+<p>Enter a location (city, state, or zip code) to get weather vibes.</p>
+<%= form_with url: weather_path, method: :get, local: true do %>
+  <div>
+    <%= text_field_tag :location, params[:location], placeholder: "Cupertino, CA or 95014" %>
+    <%= submit_tag "Get Weather Vibes", name: nil %>
+  </div>
+<% end %>

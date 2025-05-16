@@ -1,0 +1,13 @@
+<% if @forecast_days.present? %>
+  <div class="forecast-container">
+    <% @forecast_days.each do |day| %>
+      <div class="forecast-day">
+        <p><strong><%= l day[:date].to_date %></strong></p>
+        <%= image_tag "https:#{day[:condition_icon]}" %>
+        <p><%= day[:condition_text] %></p>
+        <p>High: <%= day[:high_temp] %>°F</p>
+        <p>Low: <%= day[:low_temp] %>°F</p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
