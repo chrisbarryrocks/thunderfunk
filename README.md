@@ -68,3 +68,9 @@ bundle exec rspec
 
 If the `REDIS_URL` environment variable is set and Redis is running at that address, caching is done via Redis.
 If we can't connect to a Redis instance, we'll fall back to Rails MemoryStore.
+
+## Coming soon!
+
+Keep an eye out for the upcoming interactive UI, at [https://thisdev.rocks](https://thisdev.rocks)!
+
+![Thunder Funk Preview](https://raw.githubusercontent.com/chrisbarry00/thunderfunk/refs/heads/main/public/thunderfunk_preview.png)

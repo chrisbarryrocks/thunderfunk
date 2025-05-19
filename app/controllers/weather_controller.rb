@@ -18,6 +18,25 @@ class WeatherController < ApplicationController
     render :index
   end
 
+  def fetch_weather_data
+    if location.blank?
+      render json: { error: "Please enter a valid location." }, status: :bad_request
+      return
+    end
+
+    weather_data, cached = WeatherService.fetch_weather(location)
+
+    if weather_data.nil?
+      render json: { error: "We weren’t able to retrieve weather for that location, please try again!" }, status: :not_found
+      return
+    end
+
+    render json: {
+      weather: weather_data,
+      cached: cached
+    }, status: :ok
+  end
+
   private
 
   def ensure_submitted

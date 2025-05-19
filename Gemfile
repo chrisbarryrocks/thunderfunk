@@ -44,6 +44,7 @@ gem "httparty"
 gem "redis"
 gem "dotenv-rails"
 gem "rspec-rails", group: [ :development, :test ]
+gem "rack-cors", require: "rack/cors"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
