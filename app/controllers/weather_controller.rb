@@ -82,7 +82,11 @@ class WeatherController < ApplicationController
   end
 
   def prepare_location(location_data)
-    @location = [ location_data["name"], location_data["region"], location_data["country"] ].join(", ")
+    @location = [
+      location_data["name"],
+      location_data["region"],
+      location_data["country"]
+    ].join(", ")
   end
 
   def submitted?
